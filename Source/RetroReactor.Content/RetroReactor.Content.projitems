@@ -3,32 +3,16 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>{B1DF8279-B01D-4C68-90AB-E2CC998FF750}</SharedGUID>
+    <SharedGUID>d0d4d530-368a-4afe-bb28-cb35592300c3</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>RetroReactor.Shared</Import_RootNamespace>
+    <Import_RootNamespace>RetroReactor.Content</Import_RootNamespace>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Game\HexRotation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Game\RRGameMap.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MainGame.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Resources\L10NImpl.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Resources\RRConstants.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Resources\RRSounds.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Resources\Textures.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Screens\Common\DebugUtils.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Screens\NormalGameScreen\Background\RRGameBackground.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Screens\NormalGameScreen\HexGameRenderer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Screens\NormalGameScreen\HUD\RRGameHUD.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Screens\NormalGameScreen\RREntityManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Screens\NormalGameScreen\RRGameScreen.cs" />
-  </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
     <None Include="$(MSBuildThisFileDirectory)Content\fonts\debugFont.spritefont" />
     <None Include="$(MSBuildThisFileDirectory)Content\fonts\debugFontSmall.spritefont" />
     <None Include="$(MSBuildThisFileDirectory)Content\fonts\hudFontRegular.spritefont" />
-    <None Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Content\textures\spritesheet_default-sheet_bd.json" />

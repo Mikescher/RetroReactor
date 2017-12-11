@@ -1,13 +1,14 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using MonoSAMFramework.Portable;
+using MonoSAMFramework.Portable.DeviceBridge;
 using MonoSAMFramework.Portable.LogProtocol;
 using MonoSAMFramework.Portable.Screens;
 using MonoSAMFramework.Portable.Sound;
 using RetroReactor.Shared.Resources;
 using RetroReactor.Shared.Screens.NormalGameScreen;
 
-namespace GridDominance.Shared
+namespace RetroReactor.Shared
 {
 	public class MainGame : MonoSAMGame
 	{
@@ -32,33 +33,34 @@ namespace GridDominance.Shared
 
 		protected override void OnInitialize()
 		{
-#if __DESKTOP__
+			if (Bridge.SystemType == SAMSystemType.MONOGAME_DESKTOP)
+			{
+//				const double ZOOM = 0.925;
+//				const double ZOOM = 0.525;
+				const double ZOOM = 0.425;
 
-//			const double ZOOM = 0.925;
-//			const double ZOOM = 0.525;
-			const double ZOOM = 0.425;
+				IsMouseVisible = true;
+				Graphics.IsFullScreen = false;
 
-			IsMouseVisible = true;
-			Graphics.IsFullScreen = false;
-
-			Graphics.PreferredBackBufferWidth  = (int)(1080 * ZOOM);
-			Graphics.PreferredBackBufferHeight = (int)(1920 * ZOOM);
-			Window.AllowUserResizing = true;
+				Graphics.PreferredBackBufferWidth = (int) (1080 * ZOOM);
+				Graphics.PreferredBackBufferHeight = (int) (1920 * ZOOM);
+				Window.AllowUserResizing = true;
 
 #if DEBUG
-			Graphics.SynchronizeWithVerticalRetrace = false;
-			IsFixedTimeStep = false;
-			TargetElapsedTime = TimeSpan.FromMilliseconds(1);
+				Graphics.SynchronizeWithVerticalRetrace = false;
+				IsFixedTimeStep = false;
+				TargetElapsedTime = TimeSpan.FromMilliseconds(1);
 #endif
 
-			Graphics.ApplyChanges();
-			Window.Position = new Point((1920 - Graphics.PreferredBackBufferWidth) / 2, (1080 - Graphics.PreferredBackBufferHeight) / 2);
-
-#else
-			Graphics.IsFullScreen = true;
-			Graphics.SupportedOrientations = DisplayOrientation.Portrait;
-			Graphics.ApplyChanges();
-#endif
+				Graphics.ApplyChanges();
+				Window.Position = new Point((1920 - Graphics.PreferredBackBufferWidth) / 2, (1080 - Graphics.PreferredBackBufferHeight) / 2);
+			}
+			else
+			{
+				Graphics.IsFullScreen = true;
+				Graphics.SupportedOrientations = DisplayOrientation.Portrait;
+				Graphics.ApplyChanges();
+			}
 		}
 
 		protected override void OnAfterInitialize()

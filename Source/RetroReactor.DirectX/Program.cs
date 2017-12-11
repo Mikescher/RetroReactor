@@ -1,7 +1,7 @@
-﻿using GridDominance.Shared;
-using MonoSAMFramework.Portable;
+﻿using MonoSAMFramework.Portable;
 using System;
-using RetroReactor.OpenGL.Impl;
+using RetroReactor.DirectX.Impl;
+using RetroReactor.Shared;
 
 namespace RetroReactor.DirectX
 {

@@ -3,12 +3,12 @@ using Android.App;
 using Android.Content.PM;
 using Android.Views;
 using Android.OS;
-using GridDominance.Shared;
 using Microsoft.Xna.Framework;
 using Android.Content;
 using MonoSAMFramework.Portable.LogProtocol;
 using MonoSAMFramework.Portable;
 using RetroReactor.Android.Impl;
+using RetroReactor.Shared;
 
 namespace RetroReactor.Android
 {

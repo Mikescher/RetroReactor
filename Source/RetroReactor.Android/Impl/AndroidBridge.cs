@@ -12,11 +12,13 @@ namespace RetroReactor.Android.Impl
 	class AndroidBridge : ISAMOperatingSystemBridge
 	{
 		public FileHelper FileHelper { get; } = new AndroidFileHelper();
+
 		public string EnvironmentStackTrace => System.Environment.StackTrace;
 		public string FullDeviceInfoString { get; } = GenerateInfoStr();
 		public string DeviceName { get; } = string.Format("{0} {1}", Build.Manufacturer, Build.Model);
 		public string DeviceVersion { get; } = string.Format("Android {0} sdk-{1}", Build.VERSION.Release, Build.VERSION.Sdk);
 		public FSize DeviceResolution { get; } = ScreenRes();
+		public SAMSystemType SystemType { get; } = SAMSystemType.MONOGAME_ANDROID;
 
 		private readonly MainActivity _activity;
 

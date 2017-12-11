@@ -58,7 +58,7 @@ namespace RetroReactor.Shared.Screens.NormalGameScreen
 		{
 #if DEBUG
 			DebugDisp.IsEnabled = DebugSettings.Get("DebugTextDisplay");
-			DebugDisp.Scale = 0.75f;
+			DebugDisp.Scale = 0.65f;
 #endif
 
 			//

@@ -8,7 +8,7 @@ using MonoSAMFramework.Portable.GameMath.Geometry;
 using MonoSAMFramework.Portable.Language;
 using RetroReactor.Generic.Impl;
 
-namespace RetroReactor.OpenGL.Impl
+namespace RetroReactor.DirectX.Impl
 {
 	class WindowsBridge : ISAMOperatingSystemBridge
 	{
@@ -17,7 +17,7 @@ namespace RetroReactor.OpenGL.Impl
 
 		public FSize DeviceResolution => new FSize(MonoSAMGame.CurrentInst.Window.ClientBounds.Width, MonoSAMGame.CurrentInst.Window.ClientBounds.Height);
 		public string FullDeviceInfoString { get; } = "?? RetroReactor.Windows.WindowsImpl ??" + "\n" + Environment.MachineName + "/" + Environment.UserName;
-		public string DeviceName { get; } = "PC_OGL";
+		public string DeviceName { get; } = "PC_DX";
 		public string DeviceVersion { get; } = Environment.OSVersion.VersionString;
 		public SAMSystemType SystemType { get; } = SAMSystemType.MONOGAME_DESKTOP;
 

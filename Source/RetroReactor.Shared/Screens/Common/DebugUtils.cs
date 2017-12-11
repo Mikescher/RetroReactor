@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using GridDominance.Shared;
+using MonoSAMFramework.Portable;
 using MonoSAMFramework.Portable.DebugTools;
 using MonoSAMFramework.Portable.Input;
 using MonoSAMFramework.Portable.Screens;
@@ -52,11 +50,8 @@ namespace RetroReactor.Shared.Screens.Common
 		}
 		public static void CreateShortcuts(GameScreen scrn)
 		{
-#if __DESKTOP__
 			DebugSettings.AddSwitch(null, "DBG", scrn, KCL.C(SKeys.D, SKeys.AndroidMenu), true);
-#else
-			DebugSettings.AddSwitch(null, "DBG", scrn, KCL.C(SKeys.D, SKeys.AndroidMenu), true);
-#endif
+
 			DebugSettings.AddFunctionless("DBG", "DebugTextDisplay", scrn);
 
 			DebugSettings.AddTrigger("DBG", "ClearMessages", scrn, SKeys.C, KeyModifier.None, x => scrn.DebugDisp.Clear());

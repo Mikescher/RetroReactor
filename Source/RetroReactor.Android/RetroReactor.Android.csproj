@@ -76,7 +76,7 @@
     <Compile Include="MainActivity.cs" />
   </ItemGroup>
   <ItemGroup>
-    <MonoGameContentReference Include="..\RetroReactor.Shared\Content\Content.mgcb">
+    <MonoGameContentReference Include="..\RetroReactor.Content\Content\Content.mgcb">
       <Link>Content\Content.mgcb</Link>
     </MonoGameContentReference>
     <None Include="packages.config" />
@@ -89,6 +89,10 @@
     <ProjectReference Include="..\MonoSAMFramework.Portable\MonoSAMFramework.Portable.csproj">
       <Project>{550f036e-f23e-4999-bb01-4857486e4125}</Project>
       <Name>MonoSAMFramework.Portable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RetroReactor.Shared\RetroReactor.Shared.csproj">
+      <Project>{9fef16e4-8a65-41da-9bc2-f2e1dd708f76}</Project>
+      <Name>RetroReactor.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -127,7 +131,6 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\Splash.png" />
   </ItemGroup>
-  <Import Project="..\RetroReactor.Shared\RetroReactor.Shared.projitems" Label="Shared" Condition="Exists('..\RetroReactor.Shared\RetroReactor.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
 </Project>

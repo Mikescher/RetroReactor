@@ -2,7 +2,7 @@
 using System.IO.IsolatedStorage;
 using MonoSAMFramework.Portable.DeviceBridge;
 
-namespace RetroReactor.OpenGL.Impl
+namespace RetroReactor.Generic.Impl
 {
 	class WindowsFileHelper : FileHelper
 	{

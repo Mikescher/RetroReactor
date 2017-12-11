@@ -1,7 +1,7 @@
-﻿using GridDominance.Shared;
-using System;
+﻿using System;
 using MonoSAMFramework.Portable;
 using RetroReactor.OpenGL.Impl;
+using RetroReactor.Shared;
 
 namespace RetroReactor.OpenGL
 {

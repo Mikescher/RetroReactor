@@ -44,17 +44,15 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\RetroReactor.OpenGL\Impl\WindowsBridge.cs">
-      <Link>Impl\WindowsBridge.cs</Link>
-    </Compile>
     <Compile Include="..\RetroReactor.OpenGL\Impl\WindowsFileHelper.cs">
       <Link>Impl\WindowsFileHelper.cs</Link>
     </Compile>
+    <Compile Include="Impl\WindowsBridge.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <MonoGameContentReference Include="..\RetroReactor.Shared\Content\Content.mgcb">
+    <MonoGameContentReference Include="..\RetroReactor.Content\Content\Content.mgcb">
       <Link>Content\Content.mgcb</Link>
     </MonoGameContentReference>
     <None Include="Icon.png" />
@@ -66,11 +64,12 @@
       <Project>{550f036e-f23e-4999-bb01-4857486e4125}</Project>
       <Name>MonoSAMFramework.Portable</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RetroReactor.Shared\RetroReactor.Shared.csproj">
+      <Project>{9fef16e4-8a65-41da-9bc2-f2e1dd708f76}</Project>
+      <Name>RetroReactor.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\" />
-  </ItemGroup>
-  <Import Project="..\RetroReactor.Shared\RetroReactor.Shared.projitems" Label="Shared" />
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
 </Project>
