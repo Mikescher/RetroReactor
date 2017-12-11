@@ -12,6 +12,7 @@ using MonoSAMFramework.Portable.Screens.Background;
 using MonoSAMFramework.Portable.Screens.Entities;
 using MonoSAMFramework.Portable.Screens.HUD;
 using MonoSAMFramework.Portable.Screens.ViewportAdapters;
+using RetroReactor.Shared.Game;
 using RetroReactor.Shared.Resources;
 using RetroReactor.Shared.Screens.Common;
 using RetroReactor.Shared.Screens.NormalGameScreen.Background;
@@ -32,8 +33,14 @@ namespace RetroReactor.Shared.Screens.NormalGameScreen
 		protected override FRectangle CreateMapFullBounds() => new FRectangle(0, 0, 1, 1);
 		protected override float GetBaseTextureScale() => Textures.DEFAULT_TEXTURE_SCALE_F;
 
+		private readonly RRGameMap _gameMap;
+		private readonly HexGameRenderer _gameRenderer;
+
 		public RRGameScreen(MonoSAMGame game, GraphicsDeviceManager gdm) : base(game, gdm)
 		{
+			_gameMap = new RRGameMap(0);
+			_gameRenderer = new HexGameRenderer();
+
 			Initialize();
 		}
 
@@ -44,7 +51,7 @@ namespace RetroReactor.Shared.Screens.NormalGameScreen
 			DebugDisp = DebugUtils.CreateDisplay(this);
 #endif
 
-			//
+			_gameMap.Init();
 		}
 
 		protected override void OnUpdate(SAMTime gameTime, InputState istate)
@@ -59,7 +66,7 @@ namespace RetroReactor.Shared.Screens.NormalGameScreen
 
 		protected override void OnDrawGame(IBatchRenderer sbatch)
 		{
-			//
+			_gameRenderer.Draw(sbatch, _gameMap);
 		}
 
 		protected override void OnDrawHUD(IBatchRenderer sbatch)

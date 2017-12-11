@@ -9,6 +9,8 @@
     <Import_RootNamespace>RetroReactor.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Game\HexRotation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\RRGameMap.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainGame.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Resources\L10NImpl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Resources\RRConstants.cs" />
@@ -16,6 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Resources\Textures.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Screens\Common\DebugUtils.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Screens\NormalGameScreen\Background\RRGameBackground.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screens\NormalGameScreen\HexGameRenderer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Screens\NormalGameScreen\HUD\RRGameHUD.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Screens\NormalGameScreen\RREntityManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Screens\NormalGameScreen\RRGameScreen.cs" />
