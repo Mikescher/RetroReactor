@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroReactor.Shared", "Retr
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "RetroReactor.Content", "RetroReactor.Content\RetroReactor.Content.shproj", "{D0D4D530-368A-4AFE-BB28-CB35592300C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroReactor.OpenGL.Fody", "RetroReactor.OpenGL.Fody\RetroReactor.OpenGL.Fody.csproj", "{699F0D34-944A-48A4-B046-81299C62AD06}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		RetroReactor.Content\RetroReactor.Content.projitems*{d0d4d530-368a-4afe-bb28-cb35592300c3}*SharedItemsImports = 13
@@ -82,6 +84,12 @@ Global
 		{9FEF16E4-8A65-41DA-9BC2-F2E1DD708F76}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9FEF16E4-8A65-41DA-9BC2-F2E1DD708F76}.Release|x86.ActiveCfg = Release|Any CPU
 		{9FEF16E4-8A65-41DA-9BC2-F2E1DD708F76}.Release|x86.Build.0 = Release|Any CPU
+		{699F0D34-944A-48A4-B046-81299C62AD06}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{699F0D34-944A-48A4-B046-81299C62AD06}.Debug|x86.ActiveCfg = Debug|x86
+		{699F0D34-944A-48A4-B046-81299C62AD06}.Debug|x86.Build.0 = Debug|x86
+		{699F0D34-944A-48A4-B046-81299C62AD06}.Release|Any CPU.ActiveCfg = Release|x86
+		{699F0D34-944A-48A4-B046-81299C62AD06}.Release|x86.ActiveCfg = Release|x86
+		{699F0D34-944A-48A4-B046-81299C62AD06}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,6 +99,7 @@ Global
 		{D49363EF-8D37-42B4-9AB4-C2083A4B186E} = {47E02C35-578A-4F12-8FC1-55A03ACB1A70}
 		{2A67C303-D8B0-4BE0-A2A7-89EC731B2569} = {47E02C35-578A-4F12-8FC1-55A03ACB1A70}
 		{01F592FC-A70B-4597-8BF6-C6187AC15357} = {47E02C35-578A-4F12-8FC1-55A03ACB1A70}
+		{699F0D34-944A-48A4-B046-81299C62AD06} = {47E02C35-578A-4F12-8FC1-55A03ACB1A70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5C89C34-E18E-4693-B857-290DC33AF4C1}
