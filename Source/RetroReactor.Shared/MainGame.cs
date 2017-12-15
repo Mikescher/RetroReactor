@@ -33,34 +33,7 @@ namespace RetroReactor.Shared
 
 		protected override void OnInitialize()
 		{
-			if (Bridge.SystemType == SAMSystemType.MONOGAME_DESKTOP)
-			{
-//				const double ZOOM = 0.925;
-//				const double ZOOM = 0.525;
-				const double ZOOM = 0.425;
-
-				IsMouseVisible = true;
-				Graphics.IsFullScreen = false;
-
-				Graphics.PreferredBackBufferWidth = (int) (1080 * ZOOM);
-				Graphics.PreferredBackBufferHeight = (int) (1920 * ZOOM);
-				Window.AllowUserResizing = true;
-
-#if DEBUG
-				Graphics.SynchronizeWithVerticalRetrace = false;
-				IsFixedTimeStep = false;
-				TargetElapsedTime = TimeSpan.FromMilliseconds(1);
-#endif
-
-				Graphics.ApplyChanges();
-				Window.Position = new Point((1920 - Graphics.PreferredBackBufferWidth) / 2, (1080 - Graphics.PreferredBackBufferHeight) / 2);
-			}
-			else
-			{
-				Graphics.IsFullScreen = true;
-				Graphics.SupportedOrientations = DisplayOrientation.Portrait;
-				Graphics.ApplyChanges();
-			}
+			// nothing
 		}
 
 		protected override void OnAfterInitialize()

@@ -17,7 +17,7 @@ namespace RetroReactor.Android
 		Icon = "@drawable/icon",
 		Theme = "@style/Theme.Splash",
 		LaunchMode = LaunchMode.SingleInstance,
-		ScreenOrientation = ScreenOrientation.SensorLandscape,
+		ScreenOrientation = ScreenOrientation.Portrait,
 		ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden | ConfigChanges.Keyboard | ConfigChanges.ScreenSize)]
 
 	// ReSharper disable once ClassNeverInstantiated.Global

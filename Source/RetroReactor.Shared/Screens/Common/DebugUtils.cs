@@ -50,7 +50,7 @@ namespace RetroReactor.Shared.Screens.Common
 		}
 		public static void CreateShortcuts(GameScreen scrn)
 		{
-			DebugSettings.AddSwitch(null, "DBG", scrn, KCL.C(SKeys.D, SKeys.AndroidMenu), true);
+			DebugSettings.AddSwitch(null, "DBG", scrn, KCL.C(SKeys.D, SKeys.AndroidMenu), MonoSAMGame.IsDesktop());
 
 			DebugSettings.AddFunctionless("DBG", "DebugTextDisplay", scrn);
 

@@ -2,6 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
+using Microsoft.Xna.Framework;
 using MonoSAMFramework.Portable;
 using MonoSAMFramework.Portable.DeviceBridge;
 using MonoSAMFramework.Portable.GameMath.Geometry;
@@ -20,6 +21,29 @@ namespace RetroReactor.OpenGL.Impl
 		public string DeviceName { get; } = "PC_OGL_FODY";
 		public string DeviceVersion { get; } = Environment.OSVersion.VersionString;
 		public SAMSystemType SystemType { get; } = SAMSystemType.MONOGAME_DESKTOP;
+
+		public void OnNativeInitialize(MonoSAMGame game)
+		{
+			//const double ZOOM = 0.925;
+			//const double ZOOM = 0.525;
+			const double ZOOM = 0.425;
+
+			game.IsMouseVisible = true;
+			game.Graphics.IsFullScreen = false;
+
+			game.Graphics.PreferredBackBufferWidth = (int)(1080 * ZOOM);
+			game.Graphics.PreferredBackBufferHeight = (int)(1920 * ZOOM);
+			game.Window.AllowUserResizing = true;
+
+#if DEBUG
+			game.Graphics.SynchronizeWithVerticalRetrace = false;
+			game.IsFixedTimeStep = false;
+			game.TargetElapsedTime = TimeSpan.FromMilliseconds(1);
+#endif
+
+			game.Graphics.ApplyChanges();
+			game.Window.Position = new Point((1920 - game.Graphics.PreferredBackBufferWidth) / 2, (1080 - game.Graphics.PreferredBackBufferHeight) / 2);
+		}
 
 		public string DoSHA256(string input)
 		{

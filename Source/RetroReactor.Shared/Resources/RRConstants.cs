@@ -11,5 +11,8 @@ namespace RetroReactor.Shared.Resources
 
 		public const int VIEW_WIDTH  = 700;
 		public const int VIEW_HEIGHT = 1120;
+
+		public const int HEXGRID_WIDTH  = 12;
+		public const int HEXGRID_HEIGHT = 20;
 	}
 }

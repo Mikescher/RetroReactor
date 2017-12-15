@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using MonoSAMFramework.Portable;
 using MonoSAMFramework.Portable.BatchRenderer;
 using MonoSAMFramework.Portable.DebugTools;
+using MonoSAMFramework.Portable.GameMath;
 using MonoSAMFramework.Portable.GameMath.Geometry;
 using MonoSAMFramework.Portable.Input;
 using MonoSAMFramework.Portable.Screens;
@@ -25,6 +26,9 @@ namespace RetroReactor.Shared.Screens.NormalGameScreen
 		public const int VIEW_WIDTH  = RRConstants.VIEW_WIDTH;
 		public const int VIEW_HEIGHT = RRConstants.VIEW_HEIGHT;
 
+		// TODO reaction speed faster with more active reactants (bounded, 1 to 4 ?)
+		private const float REACTION_SPEED = 4f; // steps per sec
+
 		protected override EntityManager CreateEntityManager() => new RREntityManager(this);
 		protected override GameHUD CreateHUD() => new RRGameHUD(this);
 		protected override GameBackground CreateBackground() => new RRGameBackground(this);
@@ -35,6 +39,9 @@ namespace RetroReactor.Shared.Screens.NormalGameScreen
 
 		private readonly RRGameMap _gameMap;
 		private readonly HexGameRenderer _gameRenderer;
+
+		private bool _isReacting = false;
+		private float _reactionStepProgress = 0f;
 
 		public RRGameScreen(MonoSAMGame game, GraphicsDeviceManager gdm) : base(game, gdm)
 		{
@@ -61,12 +68,33 @@ namespace RetroReactor.Shared.Screens.NormalGameScreen
 			DebugDisp.Scale = 0.65f;
 #endif
 
-			//
+			if (_isReacting)
+			{
+				_reactionStepProgress += gameTime.ElapsedSeconds * REACTION_SPEED;
+				if (_reactionStepProgress >= 1)
+				{
+					_reactionStepProgress = 0f;
+					_isReacting = _gameMap.Step();
+				}
+			}
+
+			if (!_isReacting && istate.IsExclusiveJustDown)
+			{
+				istate.Swallow(InputConsumer.GameBackground);
+
+				var p = _gameRenderer.GetHexagonUnderMouse(istate.GamePointerPosition);
+				if (p != null)
+				{
+					_gameMap.Rotate(p.Value.X, p.Value.Y, CircularDirection.CW);
+				}
+
+				_isReacting = true;
+			}
 		}
 
 		protected override void OnDrawGame(IBatchRenderer sbatch)
 		{
-			_gameRenderer.Draw(sbatch, _gameMap);
+			_gameRenderer.Draw(sbatch, _gameMap, _reactionStepProgress);
 		}
 
 		protected override void OnDrawHUD(IBatchRenderer sbatch)

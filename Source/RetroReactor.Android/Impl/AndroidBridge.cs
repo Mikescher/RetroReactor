@@ -3,6 +3,8 @@ using System.Text;
 using System.Threading;
 using Android.Content.Res;
 using Android.OS;
+using Microsoft.Xna.Framework;
+using MonoSAMFramework.Portable;
 using MonoSAMFramework.Portable.DeviceBridge;
 using MonoSAMFramework.Portable.GameMath.Geometry;
 using MonoSAMFramework.Portable.Language;
@@ -25,6 +27,13 @@ namespace RetroReactor.Android.Impl
 		public AndroidBridge(MainActivity a)
 		{
 			_activity = a;
+		}
+
+		public void OnNativeInitialize(MonoSAMGame game)
+		{
+			game.Graphics.IsFullScreen = true;
+			game.Graphics.SupportedOrientations = DisplayOrientation.Portrait;
+			game.Graphics.ApplyChanges();
 		}
 
 		private static string GenerateInfoStr()
