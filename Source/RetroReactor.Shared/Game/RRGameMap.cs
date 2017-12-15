@@ -4,8 +4,8 @@ namespace RetroReactor.Shared.Game
 {
 	public class RRGameMap
 	{
-		public const int ARR_WIDTH = 20;
-		public const int ARR_HEIGHT = 32;
+		public const int ARR_WIDTH = 12;
+		public const int ARR_HEIGHT = 20;
 
 		private readonly Random _rand;
 		private readonly HexRotation[,] _offsetGrid; // "even-r" horizontal layout
