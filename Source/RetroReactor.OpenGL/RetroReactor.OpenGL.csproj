@@ -74,6 +74,16 @@
       <Name>RetroReactor.Shared</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\ExtLib\SDL2.dll">
+      <Link>SDL2.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\ExtLib\soft_oal.dll">
+      <Link>soft_oal.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <!-- Specify the search path explicitly so the ResolveAssemblyReferences task picks the right ones -->
   <Target Name="BeforeResolveReferences">
     <CreateProperty Value="$(MSBuildProgramFiles32)\MonoGame\v3.0\Assemblies\Windows;$(AssemblySearchPaths)">
